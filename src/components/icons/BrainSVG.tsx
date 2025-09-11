@@ -66,115 +66,127 @@ export default function BrainSVG({ isLit = false, className = "", width = 500, h
         </filter>
       </defs>
 
-      {/* Main Brain Outline - Detailed anatomical shape */}
+      {/* Main Brain Outline - Professional Symmetrical Shape */}
       <motion.path
-        d="M250 60 
-           C310 55, 370 75, 410 120 
-           C440 150, 445 185, 440 220 
-           C435 250, 425 275, 410 295 
-           C395 315, 375 330, 350 340 
-           C325 350, 300 355, 275 357 
-           C250 359, 225 357, 200 350 
-           C175 343, 152 330, 135 315 
-           C118 300, 105 280, 98 255 
-           C90 230, 88 200, 95 175 
-           C102 150, 115 125, 135 105 
-           C155 85, 180 70, 210 62 
-           C230 58, 240 59, 250 60 Z"
+        d="M250 70 
+           C195 70, 140 95, 110 140 
+           C85 180, 85 225, 95 270 
+           C105 315, 130 355, 170 375 
+           C210 395, 250 400, 250 400 
+           C250 400, 290 395, 330 375 
+           C370 355, 395 315, 405 270 
+           C415 225, 415 180, 390 140 
+           C360 95, 305 70, 250 70 Z"
         fill="none"
         stroke={isLit ? "url(#brainGradientLit)" : "url(#brainGradientNormal)"}
-        strokeWidth="4"
+        strokeWidth="3"
         filter="url(#glow)"
         className="transition-all duration-500"
       />
 
-      {/* Left Hemisphere Detail */}
+      {/* Left Hemisphere - Symmetric Design */}
       <motion.path
-        d="M155 150 
-           C175 130, 215 120, 250 130 
-           C250 165, 248 200, 245 235 
-           C242 270, 235 300, 225 325 
-           C205 330, 180 325, 160 315 
-           C140 305, 125 285, 118 260 
-           C110 235, 115 210, 125 185 
-           C135 165, 145 155, 155 150 Z"
-        fill="none"
+        d="M145 160 
+           C130 140, 125 180, 135 220 
+           C145 260, 165 295, 195 320 
+           C225 340, 250 345, 250 345 
+           C250 300, 248 250, 245 200 
+           C242 150, 200 130, 165 140 
+           C155 145, 150 150, 145 160 Z"
+        fill={isLit ? "rgba(251, 191, 36, 0.1)" : "rgba(0, 212, 255, 0.1)"}
         stroke={isLit ? "#fbbf24" : "#00d4ff"}
         strokeWidth="2"
-        opacity={isLit ? 0.8 : 0.6}
+        opacity={isLit ? 0.9 : 0.7}
         className="transition-all duration-500"
       />
 
-      {/* Right Hemisphere Detail */}
+      {/* Right Hemisphere - Mirror of Left */}
       <motion.path
-        d="M250 130 
-           C285 120, 325 130, 345 150 
-           C355 155, 365 165, 375 185 
-           C385 210, 390 235, 382 260 
-           C375 285, 360 305, 340 315 
-           C320 325, 295 330, 275 325 
-           C265 300, 258 270, 255 235 
-           C252 200, 250 165, 250 130 Z"
-        fill="none"
+        d="M355 160 
+           C370 140, 375 180, 365 220 
+           C355 260, 335 295, 305 320 
+           C275 340, 250 345, 250 345 
+           C250 300, 252 250, 255 200 
+           C258 150, 300 130, 335 140 
+           C345 145, 350 150, 355 160 Z"
+        fill={isLit ? "rgba(245, 158, 11, 0.1)" : "rgba(78, 205, 196, 0.1)"}
         stroke={isLit ? "#f59e0b" : "#4ecdc4"}
         strokeWidth="2"
-        opacity={isLit ? 0.8 : 0.6}
+        opacity={isLit ? 0.9 : 0.7}
         className="transition-all duration-500"
       />
 
-      {/* Corpus Callosum - Bridge between hemispheres */}
+      {/* Central Sulcus - Professional Brain Division */}
       <motion.path
-        d="M240 200 C245 205, 255 205, 260 200 C255 215, 245 215, 240 200"
+        d="M250 100 C250 120, 250 140, 250 160 C250 180, 250 200, 250 220 C250 240, 250 260, 250 280 C250 300, 250 320, 250 340"
         fill="none"
         stroke={isLit ? "#ea580c" : "#a855f7"}
-        strokeWidth="3"
-        opacity={0.7}
-        className="transition-all duration-500"
-      />
-
-      {/* Cerebellum */}
-      <motion.ellipse
-        cx="250"
-        cy="340"
-        rx="35"
-        ry="20"
-        fill="none"
-        stroke={isLit ? "#dc2626" : "#ff6b6b"}
         strokeWidth="2"
         opacity={0.6}
+        strokeDasharray="5,5"
+        className="transition-all duration-500"
+        animate={{
+          strokeDashoffset: [0, -10],
+          opacity: isLit ? [0.6, 1, 0.6] : [0.4, 0.6, 0.4]
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+
+      {/* Cerebellum - More Realistic */}
+      <motion.ellipse
+        cx="250"
+        cy="360"
+        rx="45"
+        ry="25"
+        fill={isLit ? "rgba(220, 38, 38, 0.2)" : "rgba(255, 107, 107, 0.2)"}
+        stroke={isLit ? "#dc2626" : "#ff6b6b"}
+        strokeWidth="2"
+        opacity={0.8}
         className="transition-all duration-500"
       />
 
-      {/* Brain Stem */}
+      {/* Brain Stem - More Anatomical */}
       <motion.path
-        d="M240 350 L240 380 C240 385, 245 390, 250 390 C255 390, 260 385, 260 380 L260 350"
+        d="M245 380 C245 385, 245 390, 247 395 C248 400, 250 405, 250 410 C250 405, 252 400, 253 395 C255 390, 255 385, 255 380"
         fill="none"
         stroke={isLit ? "#dc2626" : "#ff6b6b"}
-        strokeWidth="3"
-        opacity={0.7}
+        strokeWidth="4"
+        opacity={0.8}
         className="transition-all duration-500"
       />
 
-      {/* Neural Network - Major Nodes with enhanced detail */}
+      {/* Neural Network - Symmetrical Professional Layout */}
       {[
-        { x: 170, y: 180, size: 8, type: 'major' },
-        { x: 210, y: 160, size: 10, type: 'major' },
-        { x: 250, y: 200, size: 12, type: 'central' },
-        { x: 290, y: 165, size: 9, type: 'major' },
-        { x: 330, y: 185, size: 8, type: 'major' },
-        { x: 190, y: 220, size: 7, type: 'minor' },
-        { x: 230, y: 240, size: 6, type: 'minor' },
-        { x: 270, y: 235, size: 7, type: 'minor' },
-        { x: 310, y: 215, size: 6, type: 'minor' },
-        { x: 180, y: 260, size: 5, type: 'minor' },
-        { x: 220, y: 280, size: 8, type: 'major' },
-        { x: 280, y: 275, size: 7, type: 'minor' },
-        { x: 320, y: 255, size: 5, type: 'minor' },
-        { x: 160, y: 300, size: 4, type: 'micro' },
-        { x: 200, y: 320, size: 6, type: 'minor' },
-        { x: 250, y: 310, size: 9, type: 'major' },
-        { x: 300, y: 315, size: 6, type: 'minor' },
-        { x: 340, y: 295, size: 4, type: 'micro' }
+        // Central Processing Hub
+        { x: 250, y: 200, size: 12, type: 'central', color: '#ffffff' },
+        
+        // Left Hemisphere Nodes (Symmetrical)
+        { x: 180, y: 160, size: 9, type: 'major', color: '#00d4ff' },
+        { x: 200, y: 190, size: 7, type: 'minor', color: '#4ecdc4' },
+        { x: 170, y: 220, size: 8, type: 'major', color: '#00d4ff' },
+        { x: 190, y: 250, size: 6, type: 'minor', color: '#4ecdc4' },
+        { x: 160, y: 280, size: 7, type: 'minor', color: '#a855f7' },
+        { x: 200, y: 310, size: 8, type: 'major', color: '#ff6b6b' },
+        
+        // Right Hemisphere Nodes (Mirrored)
+        { x: 320, y: 160, size: 9, type: 'major', color: '#00d4ff' },
+        { x: 300, y: 190, size: 7, type: 'minor', color: '#4ecdc4' },
+        { x: 330, y: 220, size: 8, type: 'major', color: '#00d4ff' },
+        { x: 310, y: 250, size: 6, type: 'minor', color: '#4ecdc4' },
+        { x: 340, y: 280, size: 7, type: 'minor', color: '#a855f7' },
+        { x: 300, y: 310, size: 8, type: 'major', color: '#ff6b6b' },
+        
+        // Frontal Lobe Network
+        { x: 220, y: 140, size: 6, type: 'frontal', color: '#fbbf24' },
+        { x: 280, y: 140, size: 6, type: 'frontal', color: '#fbbf24' },
+        
+        // Occipital Lobe Network  
+        { x: 230, y: 330, size: 5, type: 'visual', color: '#dc2626' },
+        { x: 270, y: 330, size: 5, type: 'visual', color: '#dc2626' }
       ].map((node, i) => (
         <g key={`neuron-${i}`}>
           {/* Neuron Glow */}
@@ -201,17 +213,17 @@ export default function BrainSVG({ isLit = false, className = "", width = 500, h
             cx={node.x}
             cy={node.y}
             r={node.size}
-            fill="url(#neuronCore)"
+            fill={isLit ? node.color : "url(#neuronCore)"}
             filter="url(#neuronGlow)"
             initial={{ opacity: 0.4, scale: 0.5 }}
             animate={{
-              opacity: isLit ? [0.7, 1, 0.7] : [0.4, 0.8, 0.4],
-              scale: isLit ? [0.8, 1.3, 0.8] : [0.5, 1, 0.5]
+              opacity: isLit ? [0.8, 1, 0.8] : [0.5, 0.8, 0.5],
+              scale: isLit ? [0.9, 1.3, 0.9] : [0.6, 1, 0.6]
             }}
             transition={{
               duration: 2,
               repeat: Infinity,
-              delay: i * 0.15,
+              delay: i * 0.12,
               ease: "easeInOut"
             }}
           />
@@ -238,85 +250,81 @@ export default function BrainSVG({ isLit = false, className = "", width = 500, h
         </g>
       ))}
 
-      {/* Enhanced Neural Connections */}
-      {[
-        { x1: 170, y1: 180, x2: 210, y2: 160, strength: 'strong' },
-        { x1: 210, y1: 160, x2: 250, y2: 200, strength: 'strong' },
-        { x1: 250, y1: 200, x2: 290, y2: 165, strength: 'strong' },
-        { x1: 290, y1: 165, x2: 330, y2: 185, strength: 'strong' },
-        { x1: 190, y1: 220, x2: 230, y2: 240, strength: 'medium' },
-        { x1: 230, y1: 240, x2: 270, y2: 235, strength: 'medium' },
-        { x1: 270, y1: 235, x2: 310, y2: 215, strength: 'medium' },
-        { x1: 180, y1: 260, x2: 220, y2: 280, strength: 'medium' },
-        { x1: 220, y1: 280, x2: 250, y2: 310, strength: 'strong' },
-        { x1: 250, y1: 310, x2: 280, y2: 275, strength: 'medium' },
-        { x1: 280, y1: 275, x2: 320, y2: 255, strength: 'medium' },
-        { x1: 170, y1: 180, x2: 190, y2: 220, strength: 'weak' },
-        { x1: 210, y1: 160, x2: 230, y2: 240, strength: 'weak' },
-        { x1: 250, y1: 200, x2: 250, y2: 310, strength: 'strong' },
-        { x1: 290, y1: 165, x2: 270, y2: 235, strength: 'weak' },
-        { x1: 330, y1: 185, x2: 310, y2: 215, strength: 'weak' },
-        { x1: 200, y1: 320, x2: 250, y2: 310, strength: 'medium' },
-        { x1: 250, y1: 310, x2: 300, y2: 315, strength: 'medium' }
-      ].map((connection, i) => (
-        <motion.line
-          key={`synapse-${i}`}
-          x1={connection.x1}
-          y1={connection.y1}
-          x2={connection.x2}
-          y2={connection.y2}
-          stroke={isLit ? "#f59e0b" : "#4ecdc4"}
-          strokeWidth={
-            connection.strength === 'strong' ? (isLit ? "3" : "2") :
-            connection.strength === 'medium' ? (isLit ? "2" : "1.5") : 
-            (isLit ? "1.5" : "1")
-          }
-          opacity={
-            connection.strength === 'strong' ? 0.8 :
-            connection.strength === 'medium' ? 0.6 : 0.4
-          }
-          strokeDasharray={connection.strength === 'weak' ? "5,5" : "none"}
-          initial={{ opacity: 0.2 }}
-          animate={{
-            opacity: isLit ? 
-              [0.4, connection.strength === 'strong' ? 1 : 0.8, 0.4] : 
-              [0.2, connection.strength === 'strong' ? 0.6 : 0.4, 0.2],
-            strokeWidth: isLit ? 
-              [connection.strength === 'strong' ? "2" : "1", connection.strength === 'strong' ? "4" : "2.5", connection.strength === 'strong' ? "2" : "1"] :
-              [connection.strength === 'strong' ? "1" : "0.5", connection.strength === 'strong' ? "2.5" : "1.5", connection.strength === 'strong' ? "1" : "0.5"]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: i * 0.2,
-            ease: "easeInOut"
-          }}
-        />
-      ))}
-
-      {/* Particle Effects for Lit State */}
-      {isLit && [...Array(20)].map((_, i) => (
-        <motion.circle
-          key={`thought-particle-${i}`}
-          cx={150 + Math.random() * 200}
-          cy={150 + Math.random() * 200}
-          r="2"
-          fill="#fbbf24"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{
-            opacity: [0, 1, 0],
-            scale: [0, 1.5, 0],
-            x: [0, (Math.random() - 0.5) * 100],
-            y: [0, (Math.random() - 0.5) * 100]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: i * 0.15,
-            ease: "easeOut"
-          }}
-        />
-      ))}
+      {/* Enhanced Colorful Particle Effects */}
+      {isLit && [...Array(30)].map((_, i) => {
+        const colors = ['#00d4ff', '#4ecdc4', '#fbbf24', '#f59e0b', '#ff6b6b', '#a855f7', '#dc2626', '#10b981', '#f97316', '#8b5cf6'];
+        const particleColor = colors[i % colors.length];
+        const startX = 150 + Math.random() * 200;
+        const startY = 150 + Math.random() * 200;
+        
+        return (
+          <motion.g key={`thought-particle-${i}`}>
+            {/* Main Particle */}
+            <motion.circle
+              cx={startX}
+              cy={startY}
+              r="3"
+              fill={particleColor}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{
+                opacity: [0, 1, 0.8, 0],
+                scale: [0, 1.5, 2, 0],
+                x: [0, (Math.random() - 0.5) * 120],
+                y: [0, (Math.random() - 0.5) * 120]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: i * 0.2,
+                ease: "easeOut"
+              }}
+              filter="url(#neuronGlow)"
+            />
+            
+            {/* Particle Trail */}
+            <motion.circle
+              cx={startX}
+              cy={startY}
+              r="1.5"
+              fill={particleColor}
+              opacity="0.6"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{
+                opacity: [0, 0.6, 0.4, 0],
+                scale: [0, 1, 1.5, 0],
+                x: [0, (Math.random() - 0.5) * 80],
+                y: [0, (Math.random() - 0.5) * 80]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: i * 0.2 + 0.3,
+                ease: "easeOut"
+              }}
+            />
+            
+            {/* Sparkle Effect */}
+            <motion.polygon
+              points={`${startX},${startY-4} ${startX+1},${startY-1} ${startX+4},${startY} ${startX+1},${startY+1} ${startX},${startY+4} ${startX-1},${startY+1} ${startX-4},${startY} ${startX-1},${startY-1}`}
+              fill={particleColor}
+              initial={{ opacity: 0, scale: 0, rotate: 0 }}
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+                rotate: [0, 360],
+                x: [0, (Math.random() - 0.5) * 60],
+                y: [0, (Math.random() - 0.5) * 60]
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.15 + 0.5,
+                ease: "easeOut"
+              }}
+            />
+          </motion.g>
+        );
+      })}
 
       {/* Brainwave Pattern */}
       <motion.path
