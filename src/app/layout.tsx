@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import GlobalTorchCursor from "@/components/GlobalTorchCursor";
 
 export const metadata: Metadata = {
   title: "Zunno.ai - Where AI Meets Academic Excellence",
@@ -19,7 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased cursor-none">
+        <GlobalTorchCursor />
         {children}
       </body>
     </html>

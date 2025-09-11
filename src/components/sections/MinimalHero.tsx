@@ -21,110 +21,57 @@ export default function MinimalHero() {
 
   return (
     <section className="min-h-screen flex items-center relative overflow-x-hidden overflow-y-visible">
-      {/* Custom Torch Cursor */}
-      {isInBrainArea && (
-        <motion.div 
-          className="fixed pointer-events-none z-50"
-          style={{ 
-            left: mousePosition.x - 40, 
-            top: mousePosition.y - 56,
-          }}
-        >
-          <TorchSVG isActive={true} />
-        </motion.div>
-      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen py-20" style={{ overflow: "visible" }}>
+        <div className="grid lg:grid-cols-12 gap-8 items-center min-h-screen py-20" style={{ overflow: "visible" }}>
           
           {/* Left Side - Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="space-y-12"
+            className="space-y-12 lg:col-span-8"
             style={{ overflow: "visible", minWidth: 0 }}
           >
             {/* Main Mission Statement */}
             <div className="space-y-8 overflow-visible">
-              <div className="relative overflow-visible min-w-0 flex-1">
-                <motion.h1 
-                  className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold text-white leading-[0.9] tracking-tight"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.8 }}
+              <motion.h1 
+                className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold text-white leading-[0.9] tracking-tight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                <motion.span 
+                  className="block hover:bg-gradient-to-r hover:from-primary hover:via-accent hover:to-secondary hover:bg-clip-text hover:text-transparent transition-all duration-500 cursor-default font-extrabold"
+                  whileHover={{ scale: 1.02, letterSpacing: "0.1em" }}
                 >
-                  <motion.div 
-                    className="block font-extrabold relative overflow-visible"
-                    whileHover={{ 
-                      background: "linear-gradient(90deg, #00d4ff, #4ecdc4, #ff6b6b)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 30px rgba(0, 212, 255, 0.5)"
-                    }}
-                    transition={{ duration: 0.3 }}
-                    style={{ 
-                      minWidth: "fit-content",
-                      paddingRight: "2rem"
-                    }}
-                  >
-                    EVERY CHILD
-                  </motion.div>
-                  <motion.div 
-                    className="block font-extrabold relative overflow-visible"
-                    whileHover={{ 
-                      background: "linear-gradient(90deg, #ff6b6b, #4ecdc4, #00d4ff)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 30px rgba(255, 107, 107, 0.5)"
-                    }}
-                    transition={{ duration: 0.3 }}
-                    style={{ 
-                      minWidth: "fit-content",
-                      paddingRight: "2rem"
-                    }}
-                  >
-                    DESERVES
-                  </motion.div>
-                  <motion.div 
-                    className="block bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent font-black relative overflow-visible"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 1.2 }}
-                    whileHover={{ 
-                      background: "linear-gradient(90deg, #fbbf24, #f59e0b, #dc2626)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 40px rgba(251, 191, 36, 0.8)",
-                      filter: "drop-shadow(0 0 20px rgba(251, 191, 36, 0.6))"
-                    }}
-                    style={{ 
-                      minWidth: "fit-content",
-                      paddingRight: "2rem"
-                    }}
-                  >
-                    A BRAIN
-                  </motion.div>
-                  <motion.div 
-                    className="block text-3xl sm:text-4xl lg:text-5xl font-medium mt-6 relative overflow-visible"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1, delay: 1.6 }}
-                    whileHover={{ 
-                      background: "linear-gradient(90deg, #4ecdc4, #00d4ff, #ff6b6b)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 25px rgba(78, 205, 196, 0.5)"
-                    }}
-                    style={{ 
-                      minWidth: "fit-content",
-                      paddingRight: "2rem"
-                    }}
-                  >
-                    and we are building it
-                  </motion.div>
-                </motion.h1>
-              </div>
+                  EVERY CHILD
+                </motion.span>
+                <motion.span 
+                  className="block hover:bg-gradient-to-r hover:from-secondary hover:via-accent hover:to-primary hover:bg-clip-text hover:text-transparent transition-all duration-500 cursor-default font-extrabold"
+                  whileHover={{ scale: 1.02, letterSpacing: "0.1em" }}
+                >
+                  DESERVES
+                </motion.span>
+                <motion.span 
+                  className="block bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent font-black hover:from-yellow-400 hover:via-orange-500 hover:to-pink-500 transition-all duration-500 cursor-default"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 1.2 }}
+                  whileHover={{ scale: 1.05, letterSpacing: "0.15em" }}
+                >
+                  A BRAIN
+                </motion.span>
+                <motion.span 
+                  className="block text-3xl sm:text-4xl lg:text-5xl font-medium mt-6 hover:bg-gradient-to-r hover:from-accent hover:via-primary hover:to-secondary hover:bg-clip-text hover:text-transparent transition-all duration-500 cursor-default"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1, delay: 1.6 }}
+                  whileHover={{ scale: 1.02, x: 10 }}
+                >
+                  and we are building it
+                </motion.span>
+              </motion.h1>
 
               {/* Description */}
               <motion.p 
@@ -189,33 +136,44 @@ export default function MinimalHero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Side - Interactive Brain */}
+          {/* Right Side - Floating Brain */}
           <motion.div
-            className="relative flex items-center justify-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="relative lg:col-span-4 flex justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 1 }}
             onMouseEnter={() => setIsInBrainArea(true)}
             onMouseLeave={() => setIsInBrainArea(false)}
           >
-            {/* Brain Container */}
-            <div className="relative w-[500px] h-[500px] cursor-none">
+            {/* Brain Container - Smaller and floating */}
+            <motion.div 
+              className="relative w-[300px] h-[300px] cursor-none"
+              animate={{ 
+                y: [0, -10, 0],
+                rotate: [0, 5, 0, -5, 0]
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
               
               {/* Background Glow */}
               <motion.div
-                className="absolute inset-0 rounded-full opacity-20"
+                className="absolute inset-0 rounded-full opacity-30"
                 style={{
                   background: isInBrainArea 
-                    ? "radial-gradient(circle, rgba(251,191,36,0.3) 0%, rgba(249,115,22,0.2) 40%, transparent 70%)"
-                    : "radial-gradient(circle, rgba(0,212,255,0.2) 0%, rgba(78,205,196,0.1) 40%, transparent 70%)",
-                  filter: "blur(40px)"
+                    ? "radial-gradient(circle, rgba(251,191,36,0.4) 0%, rgba(249,115,22,0.3) 40%, transparent 70%)"
+                    : "radial-gradient(circle, rgba(0,212,255,0.3) 0%, rgba(78,205,196,0.2) 40%, transparent 70%)",
+                  filter: "blur(30px)"
                 }}
                 animate={{
-                  scale: isInBrainArea ? [1, 1.3, 1] : [1, 1.1, 1],
-                  opacity: isInBrainArea ? [0.3, 0.6, 0.3] : [0.1, 0.2, 0.1]
+                  scale: isInBrainArea ? [1, 1.4, 1] : [1, 1.2, 1],
+                  opacity: isInBrainArea ? [0.4, 0.7, 0.4] : [0.2, 0.3, 0.2]
                 }}
                 transition={{
-                  duration: 4,
+                  duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
@@ -225,33 +183,61 @@ export default function MinimalHero() {
               <BrainSVG 
                 isLit={isInBrainArea} 
                 className="w-full h-full relative z-10" 
+                width={300}
+                height={300}
               />
+
+              {/* Orbiting Particles */}
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={`orbit-${i}`}
+                  className="absolute w-2 h-2 bg-primary rounded-full"
+                  style={{
+                    left: '50%',
+                    top: '50%',
+                  }}
+                  animate={{
+                    rotate: 360,
+                    scale: [0.5, 1, 0.5],
+                    opacity: [0.3, 1, 0.3]
+                  }}
+                  transition={{
+                    duration: 4 + i * 0.5,
+                    repeat: Infinity,
+                    ease: "linear",
+                    delay: i * 0.3
+                  }}
+                  transformTemplate={({ rotate }) => 
+                    `translate(-50%, -50%) rotate(${rotate}) translateX(${120 + i * 10}px) rotate(-${rotate})`
+                  }
+                />
+              ))}
 
               {/* Dynamic Light Following Torch */}
               {isInBrainArea && (
                 <motion.div
                   className="absolute pointer-events-none"
                   style={{
-                    left: mousePosition.x - window.innerWidth/2 - 50,
-                    top: mousePosition.y - window.innerHeight/2 - 50,
-                    width: 100,
-                    height: 100,
+                    left: mousePosition.x - window.innerWidth/2 - 30,
+                    top: mousePosition.y - window.innerHeight/2 - 30,
+                    width: 60,
+                    height: 60,
                     background: "radial-gradient(circle, rgba(251,191,36,0.6) 0%, rgba(249,115,22,0.3) 40%, transparent 70%)",
                     borderRadius: "50%",
-                    filter: "blur(15px)"
+                    filter: "blur(10px)"
                   }}
                   animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.4, 0.8, 0.4]
+                    scale: [1, 1.3, 1],
+                    opacity: [0.5, 0.8, 0.5]
                   }}
                   transition={{
-                    duration: 1.5,
+                    duration: 1,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
                 />
               )}
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
