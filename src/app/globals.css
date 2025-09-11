@@ -1,26 +1,125 @@
 @import "tailwindcss";
+@import "@fontsource/syne/400.css";
+@import "@fontsource/syne/500.css";
+@import "@fontsource/syne/600.css";
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --surface: rgba(255, 255, 255, 0.05);
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --primary: #00d4ff;
+  --primary-glow: rgba(0, 212, 255, 0.3);
+  --secondary: #ff6b6b;
+  --secondary-glow: rgba(255, 107, 107, 0.3);
+  --accent: #4ecdc4;
+  --accent-glow: rgba(78, 205, 196, 0.3);
+  --purple: #b794f6;
+  --purple-glow: rgba(183, 148, 246, 0.3);
+  --green: #68d391;
+  --green-glow: rgba(104, 211, 145, 0.3);
+  --neutral-50: rgba(255, 255, 255, 0.9);
+  --neutral-100: rgba(255, 255, 255, 0.8);
+  --neutral-200: rgba(255, 255, 255, 0.6);
+  --neutral-300: rgba(255, 255, 255, 0.5);
+  --neutral-400: rgba(255, 255, 255, 0.4);
+  --neutral-500: rgba(255, 255, 255, 0.3);
+  --neutral-600: rgba(255, 255, 255, 0.2);
+  --neutral-700: rgba(255, 255, 255, 0.15);
+  --neutral-800: rgba(255, 255, 255, 0.1);
+  --neutral-900: rgba(255, 255, 255, 0.05);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-surface: var(--surface);
+  --color-glass: var(--glass);
+  --color-glass-border: var(--glass-border);
+  --color-primary: var(--primary);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-glow: var(--secondary-glow);
+  --color-accent: var(--accent);
+  --color-accent-glow: var(--accent-glow);
+  --color-purple: var(--purple);
+  --color-purple-glow: var(--purple-glow);
+  --color-green: var(--green);
+  --color-green-glow: var(--green-glow);
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Syne", system-ui, -apple-system, sans-serif;
 }
 
 body {
   background: var(--background);
+  background-image: 
+    radial-gradient(circle at 20% 80%, var(--primary-glow) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, var(--secondary-glow) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, var(--accent-glow) 0%, transparent 50%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glow-primary {
+  box-shadow: 0 0 40px var(--primary-glow);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 40px var(--secondary-glow);
+}
+
+.glow-accent {
+  box-shadow: 0 0 40px var(--accent-glow);
+}
+
+/* 3D transform utilities */
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
 }
