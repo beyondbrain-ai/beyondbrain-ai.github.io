@@ -45,7 +45,7 @@ export default function ParentsSection() {
               )}
               {c.chat && (
                 <div className="mt-2 space-y-2">
-                  <div className="glass rounded-lg p-3 text-neutral-200 text-sm">Alex did great on today's lab experiment. He showed excellent analytical skills!</div>
+                  <div className="glass rounded-lg p-3 text-neutral-200 text-sm">Alex did great on today&apos;s lab experiment. He showed excellent analytical skills!</div>
                   <input className="w-full glass rounded-lg px-3 py-2 border border-white/20 text-sm placeholder-neutral-500" placeholder="Type your message..." />
                 </div>
               )}

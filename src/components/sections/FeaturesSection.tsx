@@ -16,7 +16,7 @@ import {
   PieChart, 
   Home, 
   TrendingUp, 
-  Shield, 
+  // Shield, 
   Lightbulb,
   Sparkles,
   Award,

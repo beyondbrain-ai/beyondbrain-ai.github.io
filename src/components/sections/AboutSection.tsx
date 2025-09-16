@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function AboutSection() {
   return (
@@ -34,7 +35,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <img src="https://images.unsplash.com/photo-1519458246479-6acae7536988?q=80&w=1600&auto=format&fit=crop" alt="Classroom" className="w-full h-[360px] object-cover" />
+            <Image src="https://images.unsplash.com/photo-1519458246479-6acae7536988?q=80&w=1600&auto=format&fit=crop" alt="Classroom" width={1600} height={900} className="w-full h-[360px] object-cover" />
             <div className="absolute top-4 right-4 bg-white rounded-xl px-4 py-3 text-neutral-800 font-semibold">35% Better Scores</div>
             <div className="absolute bottom-4 left-4 bg-white rounded-xl px-4 py-3 text-neutral-800 font-semibold">92% Engagement</div>
           </motion.div>

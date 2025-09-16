@@ -2,9 +2,23 @@
 
 import { motion } from 'framer-motion';
 import { Brain, Gamepad2, BarChart3 } from 'lucide-react';
+import React from 'react';
+
+type IconType = React.ComponentType<{ size?: number; className?: string }>;
+
+type Meter = { label: string; value: number };
+
+type FeatureCard = {
+  icon: IconType;
+  title: string;
+  text: string;
+  bullets?: string[];
+  badges?: string[];
+  meters?: Meter[];
+};
 
 export default function KeyFeatures() {
-  const cards = [
+  const cards: FeatureCard[] = [
     {
       icon: Brain,
       title: 'AI-Powered Personalization',
@@ -44,7 +58,7 @@ export default function KeyFeatures() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, idx) => {
-            const Icon = card.icon as any;
+            const Icon = card.icon;
             return (
               <motion.div
                 key={card.title}
@@ -64,9 +78,9 @@ export default function KeyFeatures() {
                 </div>
                 <p className="text-sm text-neutral-300 mb-4">{card.text}</p>
 
-                {'bullets' in card && (
+                {card.bullets && (
                   <ul className="space-y-2 text-sm text-neutral-300">
-                    {(card as any).bullets.map((b: string) => (
+                    {card.bullets.map((b) => (
                       <li key={b} className="flex items-center space-x-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                         <span>{b}</span>
@@ -75,17 +89,17 @@ export default function KeyFeatures() {
                   </ul>
                 )}
 
-                {'badges' in card && (
+                {card.badges && (
                   <div className="flex space-x-2">
-                    {(card as any).badges.map((b: string, i: number) => (
+                    {card.badges.map((b, i) => (
                       <span key={b} className={`px-3 py-1 rounded-full text-xs text-white ${['bg-primary','bg-accent','bg-purple-500','bg-orange-500'][i % 4]}`}>{b}</span>
                     ))}
                   </div>
                 )}
 
-                {'meters' in card && (
+                {card.meters && (
                   <div className="space-y-3">
-                    {(card as any).meters.map((m: any) => (
+                    {card.meters.map((m) => (
                       <div key={m.label}>
                         <div className="flex justify-between text-xs text-neutral-400 mb-1">
                           <span>{m.label}</span>
