@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import TorchSVG from '@/components/icons/TorchSVG';
-import BrainSVG from '@/components/icons/BrainSVG';
+import KnowledgeTreeSVG from '@/components/icons/KnowledgeTreeSVG';
 
 export default function MinimalHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isInBrainArea, setIsInBrainArea] = useState(false);
+  const [isInTreeArea, setIsInTreeArea] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -136,24 +136,24 @@ export default function MinimalHero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Side - Floating Brain */}
+          {/* Right Side - Knowledge Tree */}
           <motion.div
             className="relative lg:col-span-4 flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            onMouseEnter={() => setIsInBrainArea(true)}
-            onMouseLeave={() => setIsInBrainArea(false)}
+            onMouseEnter={() => setIsInTreeArea(true)}
+            onMouseLeave={() => setIsInTreeArea(false)}
           >
-            {/* Brain Container - Smaller and floating */}
+            {/* Tree Container - Elegant and growing */}
             <motion.div 
-              className="relative w-[300px] h-[300px] cursor-none"
+              className="relative w-[350px] h-[350px] cursor-none"
               animate={{ 
-                y: [0, -10, 0],
-                rotate: [0, 5, 0, -5, 0]
+                y: [0, -8, 0],
+                scale: [1, 1.02, 1]
               }}
               transition={{
-                duration: 6,
+                duration: 5,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
@@ -161,77 +161,76 @@ export default function MinimalHero() {
               
               {/* Background Glow */}
               <motion.div
-                className="absolute inset-0 rounded-full opacity-30"
+                className="absolute inset-0 rounded-full opacity-25"
                 style={{
-                  background: isInBrainArea 
-                    ? "radial-gradient(circle, rgba(251,191,36,0.4) 0%, rgba(249,115,22,0.3) 40%, transparent 70%)"
-                    : "radial-gradient(circle, rgba(0,212,255,0.3) 0%, rgba(78,205,196,0.2) 40%, transparent 70%)",
-                  filter: "blur(30px)"
+                  background: isInTreeArea 
+                    ? "radial-gradient(circle, rgba(251,191,36,0.3) 0%, rgba(50,205,50,0.2) 40%, transparent 70%)"
+                    : "radial-gradient(circle, rgba(0,212,255,0.2) 0%, rgba(50,205,50,0.15) 40%, transparent 70%)",
+                  filter: "blur(25px)"
                 }}
                 animate={{
-                  scale: isInBrainArea ? [1, 1.4, 1] : [1, 1.2, 1],
-                  opacity: isInBrainArea ? [0.4, 0.7, 0.4] : [0.2, 0.3, 0.2]
+                  scale: isInTreeArea ? [1, 1.3, 1] : [1, 1.1, 1],
+                  opacity: isInTreeArea ? [0.3, 0.6, 0.3] : [0.15, 0.25, 0.15]
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
               />
 
-              {/* High-Quality Brain SVG */}
-              <BrainSVG 
-                isLit={isInBrainArea} 
+              {/* Knowledge Tree SVG */}
+              <KnowledgeTreeSVG 
+                isLit={isInTreeArea} 
                 className="w-full h-full relative z-10" 
-                width={300}
-                height={300}
+                width={350}
+                height={350}
+                size="large"
               />
 
-              {/* Orbiting Particles */}
-              {[...Array(8)].map((_, i) => (
+              {/* Floating Knowledge Particles */}
+              {[...Array(6)].map((_, i) => (
                 <motion.div
-                  key={`orbit-${i}`}
-                  className="absolute w-2 h-2 bg-primary rounded-full"
+                  key={`knowledge-particle-${i}`}
+                  className="absolute w-1.5 h-1.5 rounded-full"
                   style={{
-                    left: '50%',
-                    top: '50%',
+                    backgroundColor: ['#00d4ff', '#4ecdc4', '#fbbf24', '#a855f7', '#ff6b6b', '#10b981'][i],
+                    left: `${30 + Math.random() * 40}%`,
+                    top: `${20 + Math.random() * 60}%`
                   }}
                   animate={{
-                    rotate: 360,
-                    scale: [0.5, 1, 0.5],
-                    opacity: [0.3, 1, 0.3]
+                    y: [0, -30, 0],
+                    opacity: [0, 1, 0],
+                    scale: [0.5, 1.2, 0.5]
                   }}
                   transition={{
-                    duration: 4 + i * 0.5,
+                    duration: 3 + i * 0.5,
                     repeat: Infinity,
-                    ease: "linear",
-                    delay: i * 0.3
+                    ease: "easeOut",
+                    delay: i * 0.8
                   }}
-                  transformTemplate={({ rotate }) => 
-                    `translate(-50%, -50%) rotate(${rotate}) translateX(${120 + i * 10}px) rotate(-${rotate})`
-                  }
                 />
               ))}
 
               {/* Dynamic Light Following Torch */}
-              {isInBrainArea && (
+              {isInTreeArea && (
                 <motion.div
                   className="absolute pointer-events-none"
                   style={{
-                    left: mousePosition.x - window.innerWidth/2 - 30,
-                    top: mousePosition.y - window.innerHeight/2 - 30,
-                    width: 60,
-                    height: 60,
-                    background: "radial-gradient(circle, rgba(251,191,36,0.6) 0%, rgba(249,115,22,0.3) 40%, transparent 70%)",
+                    left: mousePosition.x - window.innerWidth/2 - 25,
+                    top: mousePosition.y - window.innerHeight/2 - 25,
+                    width: 50,
+                    height: 50,
+                    background: "radial-gradient(circle, rgba(251,191,36,0.5) 0%, rgba(50,205,50,0.3) 40%, transparent 70%)",
                     borderRadius: "50%",
-                    filter: "blur(10px)"
+                    filter: "blur(8px)"
                   }}
                   animate={{
-                    scale: [1, 1.3, 1],
-                    opacity: [0.5, 0.8, 0.5]
+                    scale: [1, 1.2, 1],
+                    opacity: [0.4, 0.7, 0.4]
                   }}
                   transition={{
-                    duration: 1,
+                    duration: 1.5,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
