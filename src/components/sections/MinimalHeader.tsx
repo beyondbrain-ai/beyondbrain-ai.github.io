@@ -19,14 +19,21 @@ export default function MinimalHeader() {
             <span className="font-display font-bold text-xl text-white tracking-wide">zunno.ai</span>
           </motion.div>
 
-          {/* Simple CTA */}
-          <motion.button
-            className="glass px-6 py-2 rounded-full text-sm font-medium text-neutral-200 hover:text-white transition-colors"
-            whileHover={{ scale: 1.05, y: -1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Early Access
-          </motion.button>
+          {/* Nav and CTA */}
+          <nav className="hidden md:flex items-center space-x-6">
+            {[
+              { name: 'For Students', href: '#students' },
+              { name: 'For Teachers', href: '#teachers' },
+              { name: 'For Parents', href: '#parents' },
+              { name: 'For Schools', href: '#schools' },
+              { name: 'About Us', href: '#about' },
+            ].map((item) => (
+              <a key={item.name} href={item.href} className="text-neutral-300 hover:text-white text-sm font-medium">
+                {item.name}
+              </a>
+            ))}
+            <a href="#cta" className="ml-2 bg-orange-500 hover:bg-orange-400 text-white px-4 py-2 rounded-lg font-medium">Request Demo</a>
+          </nav>
         </div>
       </div>
     </header>
