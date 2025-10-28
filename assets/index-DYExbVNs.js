@@ -10987,7 +10987,7 @@ const jS = [
             "data-component-file": "Header.jsx",
             "data-component-name": "div",
             "data-component-class": "relative group",
-            className: "relative group",
+            className: "hidden",
             children: [l.jsxs("button", {
               "data-component-start": "102:12:3544",
               "data-component-end": "108:21:3846",
@@ -11124,7 +11124,7 @@ const jS = [
             "data-component-file": "Header.jsx",
             "data-component-name": "div",
             "data-component-class": "relative group",
-            className: "relative group",
+            className: "hidden",
             children: [l.jsxs("button", {
               "data-component-start": "147:12:5689",
               "data-component-end": "154:21:6051",
