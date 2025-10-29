@@ -10865,7 +10865,7 @@ const jS = [
       "data-component-path": "src/components/Header.jsx",
       "data-component-file": "Header.jsx",
       "data-component-name": "header",
-      className: `fixed w-full z-50 transition-all duration-300 ${a?"bg-white/90 backdrop-blur-sm shadow-md":"bg-transparent"}`,
+      className: `fixed w-full z-50 transition-all duration-300 ${a?"bg-white shadow-md":"bg-transparent"}`,
       children: [l.jsxs("div", {
         "data-component-start": "49:6:1490",
         "data-component-end": "194:12:7921",
@@ -11287,7 +11287,12 @@ const jS = [
         "data-component-name": "div",
         className: `md:hidden fixed inset-0 z-40 bg-white transform ${e?"translate-x-0":"translate-x-full"} transition-transform duration-300 ease-in-out pt-20`,
         style: {
-          backgroundColor: "var(--color-background)"
+          backgroundColor: "#ffffff"
+        },
+        onClick: (t) => {
+          if (t.target === t.currentTarget) {
+            n(false)
+          }
         },
         children: l.jsxs("nav", {
           "data-component-start": "203:8:8248",
@@ -11297,7 +11302,37 @@ const jS = [
           "data-component-name": "nav",
           "data-component-class": "container mx-auto px-4 py-5 flex flex-col space-y-6",
           className: "container mx-auto px-4 py-5 flex flex-col space-y-6",
-          children: [l.jsx("a", {
+          children: [l.jsxs("div", {
+            "data-component-start": "203:8:8248",
+            "data-component-end": "203:8:8248",
+            "data-component-path": "src/components/Header.jsx",
+            "data-component-file": "Header.jsx",
+            "data-component-name": "div",
+            "data-component-class": "flex justify-end mb-4",
+            className: "flex justify-end mb-4",
+            children: [l.jsx("button", {
+              "data-component-start": "203:8:8248",
+              "data-component-end": "203:8:8248",
+              "data-component-path": "src/components/Header.jsx",
+              "data-component-file": "Header.jsx",
+              "data-component-name": "button",
+              "data-component-class": "p-2 rounded-full hover:bg-gray-100 transition-colors",
+              onClick: () => n(false),
+              className: "p-2 rounded-full hover:bg-gray-100 transition-colors",
+              "aria-label": "Close menu",
+              children: l.jsx(vS, {
+                "data-component-start": "203:8:8248",
+                "data-component-end": "203:8:8248",
+                "data-component-path": "src/components/Header.jsx",
+                "data-component-file": "Header.jsx",
+                "data-component-name": "X",
+                size: 24,
+                style: {
+                  color: "var(--color-dark)"
+                }
+              })
+            })]
+          }), l.jsx("a", {
             "data-component-start": "204:10:8328",
             "data-component-end": "210:14:8571",
             "data-component-path": "src/components/Header.jsx",
