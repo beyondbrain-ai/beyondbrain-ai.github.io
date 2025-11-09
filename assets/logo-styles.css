@@ -1,0 +1,258 @@
+/*
+ * Zunno.ai Logo Integration Styles
+ * Professional-grade logo styling with optimal blending and performance
+ */
+
+/* ============================================================================
+   Logo Container Positioning
+   ============================================================================ */
+
+/* Target the header logo container */
+header .font-poppins.font-bold.text-xl,
+footer .font-poppins.font-bold.text-xl {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  position: relative !important;
+}
+
+/* ============================================================================
+   Logo Image Styling - Header
+   ============================================================================ */
+
+header .font-poppins.font-bold.text-xl::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 42px !important;
+  height: 42px !important;
+  background-image: url('/assets/logo-optimized-192.png') !important;
+  background-size: 85% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  flex-shrink: 0 !important;
+
+  /* Circular shape */
+  border-radius: 50% !important;
+
+  /* Glassmorphism effect */
+  background-color: rgba(255, 107, 53, 0.08) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+
+  /* Glass shadow - layered for depth */
+  box-shadow:
+    0 0 20px rgba(255, 107, 53, 0.4),
+    0 4px 20px rgba(255, 107, 53, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+
+  /* Subtle border for glass rim */
+  border: 1px solid rgba(255, 107, 53, 0.15) !important;
+
+  /* Smooth rendering optimizations */
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+
+  /* Hardware acceleration for smooth animations */
+  transform: translateZ(0) !important;
+  will-change: transform, box-shadow !important;
+
+  /* Smooth transition for hover effects */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hover effect for header logo - Enhanced glass glow */
+header .font-poppins.font-bold.text-xl:hover::before {
+  transform: translateZ(0) scale(1.08) !important;
+  background-color: rgba(255, 107, 53, 0.12) !important;
+  box-shadow:
+    0 0 30px rgba(255, 107, 53, 0.6),
+    0 8px 30px rgba(255, 107, 53, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ============================================================================
+   Logo Image Styling - Footer
+   ============================================================================ */
+
+footer .font-poppins.font-bold.text-xl::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 36px !important;
+  height: 36px !important;
+  background-image: url('/assets/logo-optimized-192.png') !important;
+  background-size: 85% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  flex-shrink: 0 !important;
+
+  /* Circular shape */
+  border-radius: 50% !important;
+
+  /* Glassmorphism effect */
+  background-color: rgba(255, 107, 53, 0.06) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+
+  /* Glass shadow - subtle for footer */
+  box-shadow:
+    0 0 15px rgba(255, 107, 53, 0.3),
+    0 3px 15px rgba(255, 107, 53, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+
+  /* Subtle border */
+  border: 1px solid rgba(255, 107, 53, 0.12) !important;
+
+  /* Smooth rendering */
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+
+  /* Hardware acceleration */
+  transform: translateZ(0) !important;
+  will-change: transform, box-shadow !important;
+
+  /* Transition */
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              background-color 0.3s ease !important;
+}
+
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+/* Tablet and smaller */
+@media (max-width: 768px) {
+  header .font-poppins.font-bold.text-xl::before {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  footer .font-poppins.font-bold.text-xl::before {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  header .font-poppins.font-bold.text-xl,
+  footer .font-poppins.font-bold.text-xl {
+    gap: 0.5rem !important;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  header .font-poppins.font-bold.text-xl::before {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  footer .font-poppins.font-bold.text-xl::before {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  header .font-poppins.font-bold.text-xl,
+  footer .font-poppins.font-bold.text-xl {
+    gap: 0.375rem !important;
+  }
+}
+
+/* ============================================================================
+   High DPI / Retina Display Optimization
+   ============================================================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Use higher quality logo for retina displays */
+  header .font-poppins.font-bold.text-xl::before,
+  footer .font-poppins.font-bold.text-xl::before {
+    background-image: url('/assets/logo-optimized-512.png') !important;
+  }
+}
+
+/* ============================================================================
+   Dark Mode Enhancement
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  header .font-poppins.font-bold.text-xl::before {
+    box-shadow:
+      0 0 25px rgba(255, 107, 53, 0.5),
+      0 5px 25px rgba(255, 107, 53, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+    background-color: rgba(255, 107, 53, 0.1) !important;
+  }
+
+  footer .font-poppins.font-bold.text-xl::before {
+    box-shadow:
+      0 0 18px rgba(255, 107, 53, 0.4),
+      0 4px 18px rgba(255, 107, 53, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 107, 53, 0.08) !important;
+  }
+}
+
+/* ============================================================================
+   Reduced Motion Support (Accessibility)
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  header .font-poppins.font-bold.text-xl::before,
+  footer .font-poppins.font-bold.text-xl::before {
+    transition: none !important;
+    will-change: auto !important;
+  }
+
+  header .font-poppins.font-bold.text-xl:hover::before {
+    transform: translateZ(0) !important;
+  }
+}
+
+/* ============================================================================
+   Print Styles
+   ============================================================================ */
+
+@media print {
+  header .font-poppins.font-bold.text-xl::before,
+  footer .font-poppins.font-bold.text-xl::before {
+    box-shadow: none !important;
+    opacity: 0.8 !important;
+    background-color: transparent !important;
+  }
+}
+
+/* ============================================================================
+   Loading Performance Optimization
+   ============================================================================ */
+
+/* Preload hint for logo images (added via JavaScript) */
+header .font-poppins.font-bold.text-xl::before,
+footer .font-poppins.font-bold.text-xl::before {
+  /* Prevent flash of unstyled content */
+  animation: fadeInLogo 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+@keyframes fadeInLogo {
+  from {
+    opacity: 0;
+    transform: translateZ(0) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+  }
+}
+
+/* ============================================================================
+   Fallback for older browsers
+   ============================================================================ */
+
+@supports not (display: inline-flex) {
+  header .font-poppins.font-bold.text-xl,
+  footer .font-poppins.font-bold.text-xl {
+    display: inline-block !important;
+  }
+}
