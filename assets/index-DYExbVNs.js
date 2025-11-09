@@ -10883,18 +10883,7 @@ const jS = [
           "data-component-class": "flex items-center",
           className: "flex items-center",
           onClick: () => s("hero"),
-          children: [l.jsx("img", {
-            "data-component-start": "52:10:1693",
-            "data-component-end": "56:12:1861",
-            "data-component-path": "src/components/Header.jsx",
-            "data-component-file": "Header.jsx",
-            "data-component-name": "img",
-            "data-component-src": "https://heyboss.heeyo.ai/1746855605-ca737fc2.png",
-            "data-component-class": "h-10 mr-2 cursor-pointer",
-            src: "https://heyboss.heeyo.ai/1746855605-ca737fc2.png",
-            alt: "Zunno.ai Logo",
-            className: "h-10 mr-2 cursor-pointer"
-          }), l.jsx("span", {
+          children: [l.jsx("span", {
             "data-component-start": "57:10:1872",
             "data-component-end": "59:17:1999",
             "data-component-path": "src/components/Header.jsx",
@@ -11458,18 +11447,7 @@ const jS = [
             "data-component-name": "div",
             "data-component-class": "flex items-center",
             className: "flex items-center",
-            children: [l.jsx("img", {
-              "data-component-start": "20:14:760",
-              "data-component-end": "24:16:937",
-              "data-component-path": "src/components/Footer.jsx",
-              "data-component-file": "Footer.jsx",
-              "data-component-name": "img",
-              "data-component-src": "https://heyboss.heeyo.ai/1746855605-ca737fc2.png",
-              "data-component-class": "h-10 mr-2 invert",
-              src: "https://heyboss.heeyo.ai/1746855605-ca737fc2.png",
-              alt: "Zunno.ai Logo",
-              className: "h-10 mr-2 invert"
-            }), l.jsx("span", {
+            children: [l.jsx("span", {
               "data-component-start": "25:14:952",
               "data-component-end": "25:78:1016",
               "data-component-path": "src/components/Footer.jsx",
@@ -11515,40 +11493,6 @@ const jS = [
             "data-component-class": "space-y-2",
             className: "space-y-2",
             children: [l.jsx("li", {
-              "data-component-start": "36:14:1413",
-              "data-component-end": "40:19:1632",
-              "data-component-path": "src/components/Footer.jsx",
-              "data-component-file": "Footer.jsx",
-              "data-component-name": "li",
-              children: l.jsx("a", {
-                "data-component-start": "37:16:1434",
-                "data-component-end": "39:20:1612",
-                "data-component-path": "src/components/Footer.jsx",
-                "data-component-file": "Footer.jsx",
-                "data-component-name": "a",
-                "data-component-class": "text-white/70 hover:text-white transition-colors",
-                href: "https://legal.heyboss.tech/67845a5e6e6bf5ecd4a3ae47/",
-                className: "text-white/70 hover:text-white transition-colors",
-                children: "Privacy Policy"
-              })
-            }), l.jsx("li", {
-              "data-component-start": "41:14:1647",
-              "data-component-end": "45:19:1872",
-              "data-component-path": "src/components/Footer.jsx",
-              "data-component-file": "Footer.jsx",
-              "data-component-name": "li",
-              children: l.jsx("a", {
-                "data-component-start": "42:16:1668",
-                "data-component-end": "44:20:1852",
-                "data-component-path": "src/components/Footer.jsx",
-                "data-component-file": "Footer.jsx",
-                "data-component-name": "a",
-                "data-component-class": "text-white/70 hover:text-white transition-colors",
-                href: "https://legal.heyboss.tech/67845cfe76f9675292514b80/",
-                className: "text-white/70 hover:text-white transition-colors",
-                children: "Terms and Conditions"
-              })
-            }), l.jsx("li", {
               "data-component-start": "46:14:1887",
               "data-component-end": "50:19:2048",
               "data-component-path": "src/components/Footer.jsx",
@@ -17830,21 +17774,7 @@ const K6 = (t, e) => Ed(t) ? new Z6(e) : new X6(e, {
                   ease: "easeInOut"
                 },
                 className: "w-80 h-80 md:w-96 md:h-96 relative",
-                children: [l.jsx("img", {
-                  "data-component-start": "231:16:9269",
-                  "data-component-end": "236:18:9554",
-                  "data-component-path": "src/components/HeroSection.jsx",
-                  "data-component-file": "HeroSection.jsx",
-                  "data-component-name": "img",
-                  "data-component-src": "https://heyboss.heeyo.ai/1746855605-ca737fc2.png",
-                  "data-component-class": "w-full h-full object-contain",
-                  src: "https://heyboss.heeyo.ai/1746855605-ca737fc2.png",
-                  alt: "AI Learning Network",
-                  className: "w-full h-full object-contain",
-                  style: {
-                    filter: "drop-shadow(0 0 10px var(--color-primary))"
-                  }
-                }), l.jsx(j.div, {
+                children: [l.jsx(j.div, {
                   "data-component-start": "239:16:9627",
                   "data-component-end": "254:29:10198",
                   "data-component-path": "src/components/HeroSection.jsx",
